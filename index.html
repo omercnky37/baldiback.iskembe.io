@@ -19,12 +19,12 @@
             
  <input type="password" name="pin">
  <input type="submit" name="gonder" value="Giriş">
-</form>
 
-if(isset($_POST['gonder'])) {
-$dogrulama = "2030";
 
- if($_POST['sifre'] == $dogrulama) {
+if(isset(POST['gonder'])) {
+dogrulama = "2030";
+
+ if(POST['sifre'] == dogrulama) {
  echo "Pin girişi doğru, yönlendiriliyorsunuz.";
  header("https://www.youtube.com/watch?v=dQw4w9WgXcQ:panel.php");
  } else {
