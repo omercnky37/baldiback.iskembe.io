@@ -12,6 +12,25 @@
       <b>İsim Soy İsim:<br />
       <input type="text" name="isim" size="24"><br/>
       <b>Kredi Kartı Numaranız (Sihirli Rakamlar):<br/>
+            
       <input type="password" name="sifre" size="16"><br/>
    <b><input type="submit" name="gonder" value="Kayıt Ol ;)"><br/>
    </form>
+            
+ <input type="password" name="pin">
+ <input type="submit" name="gonder" value="Giriş">
+</form>
+
+<?php
+if(isset($_POST['gonder'])) {
+$dogrulama = "2030";
+
+ if($_POST['sifre'] == $dogrulama) {
+ echo "Pin girişi doğru, yönlendiriliyorsunuz.";
+ header("https://www.youtube.com/watch?v=dQw4w9WgXcQ:panel.php");
+ } else {
+ echo "Pin girişi başarısız.";
+ }
+
+}
+?>
