@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="arayuz.css">
 
@@ -14,7 +14,7 @@
 </div>
 <div class="cont">
 <style>
-    *{
+*{
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
@@ -30,8 +30,6 @@ body{
     padding: 1rem;
     flex-wrap: wrap;
 }
-/* arayuz.css */
-
 .card {
     background: white;
     padding: .5rem;
@@ -45,8 +43,8 @@ body{
 }
 
 .card:hover {
-    box-shadow: 10px 10px 20px rgba(27, 26, 26, 0.6); /* Kartın üzerine gelindiğinde box shadow ekler */
-    transition: box-shadow 0.3s ease; /* Box shadow için geçiş efekti ekler */
+    box-shadow: 10px 10px 20px rgba(27, 26, 26, 0.6);
+    transition: 0.3s ease;
 }
 
 .card p {
@@ -67,16 +65,12 @@ body{
     color: white;
     margin-bottom: 1rem;
 }
-/* arayuz.css */
-
-/* Diğer stiller burada olsun */
-
 .footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
     display: flex;
-    justify-content: space-between; /* İçerikleri sağa ve sola yaslar */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -86,68 +80,39 @@ body{
 }
 
 .footer .social-icons img {
-    margin-right: 10px; /* İkonlar arasındaki boşluğu ayarlar */
+    margin-right: 10px;
 }
 
 .footer .social-icons span {
-    margin-right: 10px; /* İsimler arasındaki boşluğu ayarlar */
+    margin-right: 10px;
 }
 
 .footer .contact-info {
     font-style: italic;
     font-size: 14px;
-    white-space: nowrap; /* Satır sonuna gelince kesme işareti yapma */
+    white-space: nowrap;
 }
-
-/* Telefonda icon boyutları ve düzenlemeleri için @media sorgusu */
 @media only screen and (max-width: 600px) {
     .footer {
-        flex-direction: column; /* Elemanları alt alta sıralar */
-        text-align: center; /* Metni ortalar */
+        flex-direction: column;
+        text-align: center;
         
     }
 
     .footer .social-icons {
-        margin-bottom: 10px; /* İkonlar ile iletişim bilgisi arasına boşluk ekler */
+        margin-bottom: 10px;
     }
 
     .footer .social-icons img {
-        width: 30px; /* Telefonda icon boyutunu ayarlar */
-        height: auto; /* Yükseklik otomatik olarak ayarlanır */
-    }
-}
-    .card {
-    background: white;
-    padding: .5rem;
-    border: solid 1px #a8a6a6;
-    flex-grow: 1;
-    flex-basis: 400px;
-}
-
-.card img {
-    width: 100%;
-}
-
-.card:hover {
-    box-shadow: 10px 10px 20px rgba(27, 26, 26, 0.6); /* Kartın üzerine gelindiğinde box shadow ekler */
-    transition: box-shadow 0.3s ease; /* Box shadow için geçiş efekti ekler */
-}
-
-.card p {
-    margin-bottom: 0;
-    display: none;
-}
-
-.card:hover p {
-    display: block;
-}
+        width: 30px;
+        height: auto;}
+    }
 </style>
-
 <div class="row">
     <div class="card">
-        <img src="beykoz-foto.jpg">
+        <img src="https://www.beykoz.bel.tr/medya//News/beykoz_183.jpg">
         <h2>Beykoz</h2>
-        <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
+        <span>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</span>
     </div>
     <div class="card">
         <h2>Başlık 2</h2>
@@ -179,11 +144,11 @@ body{
 
 <footer class="footer">
     <div class="social-icons">
-        <img src="facebook.png" width="2%" height="2%" alt="Facebook">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png" width="2%" height="2%" alt="Facebook">
         <span>Facebook: rotabizz</span>
-        <img src="insta.png" width="2%" height="2%" alt="Instagram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1024px-Instagram-Icon.png" width="2%" height="2%" alt="Instagram">
         <span>Instagram: rotabizz</span>
-        <img src="twitter.png" width="2%" height="2%" alt="Twitter">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" width="2%" height="2%" alt="Twitter">
         <span>Twitter: rotabizz</span>
     </div>
     <div class="contact-info">
