@@ -1,21 +1,197 @@
-<body bgcolor="#63b8ff">
-      <img src="file:///C:/Users/omerc/OneDrive/Masa%C3%BCst%C3%BC/baldi.jpg">
-<h3>Efendim "Baldiback'in İşkembe Derneği"na Hoş Geldiniz.</h3>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="arayuz.css">
 
-<b>eğer "Baldiback'in İşkembe Derneği"nden bir şey sipariş verebilmek istiyorsanız, önce derneğe kayıt olmanız gerekmektedir.</b><br />
-<b>Öncelikle Yaşınız..<br />
+    <title>title</title>
+</head>
+<body>
+<div class="header">
+    <h1>Ana Sayfa</h1>
+    <p>https://.gencbizz.com.tr</p>
+</div>
+<div class="cont">
+<style>
+    *{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: rgb(52, 52, 54);
+}
+.cont{
+    background: #c7c5c5;
+}
 
-<b><input type="radio" name="cinsiyet" value="erkek"> 18> <br />
-      <b><input type="radio" name="cinsiyet" value="kiz"> 18< </b><br />
+.row{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+/* arayuz.css */
 
-<b>Şimdi İse Son İşlemleri Gerçekleştiriniz..<br />
+.card {
+    background: white;
+    padding: .5rem;
+    border: solid 1px #a8a6a6;
+    flex-grow: 1;
+    flex-basis: 400px;
+}
 
-<form name="form" action="index.asp" method="post">
-      <b>İsim Soy İsim:<br />
-      <input type="text" name="isim" size="24"><br />
-      <b>Kredi Kartı Numaranız (Sihirli Rakamlar):
-            <br />
-            
-      <input type="password" name="sifre" size="16"><br />
-   <b><input type="submit" name="gonder" value="Kayıt Ol ;)"><br /> 
-         </form>
+.card img {
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 10px 10px 20px rgba(27, 26, 26, 0.6); /* Kartın üzerine gelindiğinde box shadow ekler */
+    transition: box-shadow 0.3s ease; /* Box shadow için geçiş efekti ekler */
+}
+
+.card p {
+    margin-bottom: 0;
+    display: "";
+}
+
+
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1rem;
+    background:#0004ff;
+    border: solid 1px rgb(17, 0, 255);
+    color: white;
+    margin-bottom: 1rem;
+}
+/* arayuz.css */
+
+/* Diğer stiller burada olsun */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* İçerikleri sağa ve sola yaslar */
+    align-items: center;
+}
+
+.footer .social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.footer .social-icons img {
+    margin-right: 10px; /* İkonlar arasındaki boşluğu ayarlar */
+}
+
+.footer .social-icons span {
+    margin-right: 10px; /* İsimler arasındaki boşluğu ayarlar */
+}
+
+.footer .contact-info {
+    font-style: italic;
+    font-size: 14px;
+    white-space: nowrap; /* Satır sonuna gelince kesme işareti yapma */
+}
+
+/* Telefonda icon boyutları ve düzenlemeleri için @media sorgusu */
+@media only screen and (max-width: 600px) {
+    .footer {
+        flex-direction: column; /* Elemanları alt alta sıralar */
+        text-align: center; /* Metni ortalar */
+        
+    }
+
+    .footer .social-icons {
+        margin-bottom: 10px; /* İkonlar ile iletişim bilgisi arasına boşluk ekler */
+    }
+
+    .footer .social-icons img {
+        width: 30px; /* Telefonda icon boyutunu ayarlar */
+        height: auto; /* Yükseklik otomatik olarak ayarlanır */
+    }
+}
+    .card {
+    background: white;
+    padding: .5rem;
+    border: solid 1px #a8a6a6;
+    flex-grow: 1;
+    flex-basis: 400px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 10px 10px 20px rgba(27, 26, 26, 0.6); /* Kartın üzerine gelindiğinde box shadow ekler */
+    transition: box-shadow 0.3s ease; /* Box shadow için geçiş efekti ekler */
+}
+
+.card p {
+    margin-bottom: 0;
+    display: none;
+}
+
+.card:hover p {
+    display: block;
+}
+</style>
+
+<div class="row">
+    <div class="card">
+        <img src="beykoz-foto.jpg">
+        <h2>Beykoz</h2>
+        <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
+    </div>
+    <div class="card">
+        <h2>Başlık 2</h2>
+        <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
+     </div>
+</div>
+<div class="row">
+    <div class="card">
+        <h2>Başlık 3</h2>
+        <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
+    </div>
+    <div class="card">
+        <h2>Başlık 4</h2>
+        <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
+     </div>
+</div>
+<div class="row">
+    <div class="card">
+        <h2>Başlık 5</h2>
+        <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
+    </div>
+    <div class="card">
+        <h2>Başlık 6</h2>
+        <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
+     </div>
+</div>
+
+</div>
+
+<footer class="footer">
+    <div class="social-icons">
+        <img src="facebook.png" width="2%" height="2%" alt="Facebook">
+        <span>Facebook: rotabizz</span>
+        <img src="insta.png" width="2%" height="2%" alt="Instagram">
+        <span>Instagram: rotabizz</span>
+        <img src="twitter.png" width="2%" height="2%" alt="Twitter">
+        <span>Twitter: rotabizz</span>
+    </div>
+    <div class="contact-info">
+        İletişim Bilgisi: (0536 698 9708)
+    </div>
+</footer>
+
+<script src="arayuz.js"></script>
+
+</body>
+</html>
