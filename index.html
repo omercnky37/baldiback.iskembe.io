@@ -1,38 +1,22 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="arayuz.css">
 
-    <title>title</title>
+    <title>Rota Bizz</title>
 </head>
-<body>
-<div class="header">
-    <h1>Ana Sayfa</h1>
-    <p>https://.gencbizz.com.tr</p>
-</div>
-<div class="cont">
 <style>
-.mySlides {display:none}
-.w3-left, .w3-right, .w3-badge {cursor:pointer}
-.w3-badge {margin-top: 20%;height:15px;width:15px;padding:0
-}
-.mySlides{
-    width: 100%;
-    height: 25%;  
-}
-/* ---------Omerin yazdigi ust taraftaki kod!!!---------*/
-*{
+    *{
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
     background: rgb(52, 52, 54);
-}
-.cont{
-    background: #c7c5c5;
+    background-image: url('https://media.istockphoto.com/id/1333161816/tr/foto%C4%9Fraf/istanbul-night-sirkeci-night.jpg?s=612x612&w=0&k=20&c=kjrzh6gLvcn2d9tTowV6ka7B1OCMY0-cR3JtPj9sXSM=');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .row{
@@ -46,16 +30,19 @@ body{
     padding: .5rem;
     border: solid 1px #a8a6a6;
     flex-grow: 1;
-    flex-basis: 400px;
+    flex-basis: 500px;
 }
 
 .card img {
     width: 100%;
+    width: 100%; 
+    max-width: 100%;
+    height: auto;
 }
 
 .card:hover {
     box-shadow: 10px 10px 20px rgba(27, 26, 26, 0.6);
-    transition: 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 .card p {
@@ -73,14 +60,28 @@ body{
     color: white;
     margin-bottom: 1rem;
 }
+.logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 10px;
+}
 .footer {
     background-color: #333;
     color: #fff;
-    padding: 20px;
     display: flex;
+    padding: 30px;
     justify-content: space-between;
     align-items: center;
+
+
 }
+@media screen and (max-width: 600px) {
+    .footer {
+        padding: 10px;
+    }
+}
+
 
 .footer .social-icons {
     display: flex;
@@ -100,10 +101,11 @@ body{
     font-size: 14px;
     white-space: nowrap;
 }
+
 @media only screen and (max-width: 600px) {
     .footer {
         flex-direction: column;
-        text-align: center;
+        text-align: center; 
         
     }
 
@@ -112,14 +114,57 @@ body{
     }
 
     .footer .social-icons img {
-        width: 30px;
-        height: auto;}
+        width: 30px; 
+        height: auto;
     }
+}
+
+
+.mySlides {
+    display: none;
+}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+.w3-content-w3-display-container {
+    margin: auto;
+    position: relative;
+    max-width: 800px;
+}
+.w3-left, .w3-right {
+    display: none;
+}
+.w3-content-w3-display-container {
+    margin: auto;
+    margin: 10px;
+    position: relative;
+    
+}
+@media only screen and (min-width: 600px) {
+    .w3-content-w3-display-container {
+      margin: 0 auto !important;
+      width: 800px !important;
+      height: auto !important;
+    }
+  
+    .w3-content-w3-display-container img.mySlides {
+      width: 100% !important;
+      height: auto !important;}}
 </style>
-<div class="w3-content w3-display-container">
-    <img class="mySlides" src="img1.jpg">
-    <img class="mySlides" src="img2.jpg">
-    <img class="mySlides" src="img3.jpg">
+<body>
+
+    
+<div class="header">
+    <div class="logo">
+        <img src="logo.PNG" width="15%" height="15%">
+    </div>   
+    <h1>Ana Sayfa</h1>
+    <p>https://.gencbizz.com.tr</p>
+
+</div>
+<div class="w3-content-w3-display-container" style="max-width:100%">
+    <img class="mySlides" src="https://www.beykoz.bel.tr/medya//News/beykoz_183.jpg" style="width:100%" height="300px">
+    <img class="mySlides" src="https://www.odamax.com/omag/wp-content/uploads/2023/07/istanbul-beykoz-sahili.jpg" style="width:100%" height="300px">
+    <img class="mySlides" src="https://cdn2.enuygun.com/media/lib/1200x675/uploads/image/beykoz-53356.webp" style="width:100%" height="300px">
     <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
       <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
       <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
@@ -128,36 +173,71 @@ body{
       <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
     </div>
   </div>
+
+
+
+
+
+
+<div class="cont">
+
+
 <div class="row">
     <div class="card">
-        <img src="https://www.beykoz.bel.tr/medya//News/beykoz_183.jpg">
-        <h2>Beykoz</h2>
+        <img src="https://cdn.tatilsepeti.com/Files/Images/Tesis/08981/1050X700/tsr08981637269882771744759.jpg">
+        <h2>Polonezköy</h2>
         <span>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</span>
     </div>
     <div class="card">
-        <h2>Başlık 2</h2>
+        <img src="https://istanbeautiful.com/tr/wp-content/uploads/kanlica2.jpg">
+        <h2>Kanlıca</h2>
         <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
      </div>
 </div>
 <div class="row">
     <div class="card">
-        <h2>Başlık 3</h2>
+        <img src="https://staticb.yolcu360.com/blog/wp-content/uploads/2018/09/20123927/kavacik.jpg">
+        <h2>Kavacık</h2>
         <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
     </div>
     <div class="card">
-        <h2>Başlık 4</h2>
+        <img src="https://isbh.tmgrup.com.tr/sbh/2020/07/04/650x344/beykoz-belediyesi-tarafindan-yapilan-sosyal-mesafe-1593846012306.jpg">
+        <h2>Gümüşsuyu</h2>
         <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
      </div>
 </div>
 <div class="row">
     <div class="card">
-        <h2>Başlık 5</h2>
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/12/f9/19/e3/orman-ici.jpg">
+        <h2>Tokatköy</h2>
         <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
     </div>
     <div class="card">
-        <h2>Başlık 6</h2>
+        <img src="https://dostbeykoz.com/isDosyalar/2022/11/09/galeri_inci_2plmrf_Zvj3zzVDWI.webp">
+        <h2>İncirköy</h2>
         <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
      </div>
+     <div class="card">
+        <img src="https://avatars.mds.yandex.net/get-altay/932730/2a00000165d69d3e94688e18f35efe7de863/XXL">
+        <h2>Soğuksu</h2>
+        <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
+     </div>
+     <div class="card">
+        <img src="https://yeniizmir.com/wp-content/uploads/2023/11/karsiyaka-ornekkoydeki-projede-onemli-adim-tamamlandi-izmir-kentsel-donusum.jpg">
+        <h2>Örnekköy</h2>
+        <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
+     </div>
+     <div class="card">
+        <img src="https://scontent.fsaw2-3.fna.fbcdn.net/v/t1.6435-9/79266967_2555594721335756_8793528681919152128_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=jqHvT4maGuYAX_jOgkJ&_nc_ht=scontent.fsaw2-3.fna&oh=00_AfDzWU8mZpAeEBF5IfWrwCxA22yuIDq-p7JNjLu6kLXvMA&oe=66253EFC">
+        <h2>Yavuz Selim</h2>
+        <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
+     </div>
+     <div class="card">
+        <img src="https://dostbeykoz.com/isDosyalar/2024/03/22/galeri_beykoz-otagtepe-kapak_pJTFi9e2QE.webp">
+        <h2>Fatih</h2>
+        <p>bu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeterbu yazı ornektir bosa yazıyorum cunku uzun bir metine ihtiyacım varf neyse bu kadar uzadı herhalde yeter</p>
+     </div>
+
 </div>
 
 </div>
@@ -181,30 +261,55 @@ body{
 </body>
 <script>
     var slideIndex = 1;
-    showDivs(slideIndex);
-    
-    function plusDivs(n) {
-      showDivs(slideIndex += n);
-    }
-    
-    function currentDiv(n) {
-      showDivs(slideIndex = n);
-    }
-    
-    function showDivs(n) {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("demo");
-      if (n > x.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = x.length}
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-white", "");
-      }
-      x[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " w3-white";
-    }
-    </script>
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+setInterval(function() {
+  plusDivs(1);
+}, 3000);
+</script>
 </html>
