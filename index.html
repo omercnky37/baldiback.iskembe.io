@@ -50,15 +50,15 @@ body{
     display: "";
 }
 .header{
+    max-width: 1000px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding: 1rem;
-    background:#0004ff;
-    border: solid 1px rgb(17, 0, 255);
-    color: white;
+    color: black;
+    background-color: #eee;
     margin-bottom: 1rem;
+    font-size: 25px;
 }
 .logo {
     position: absolute;
@@ -118,37 +118,91 @@ body{
         height: auto;
     }
 }
+.slideshow-container {
+  max-width: 1000px;
+  max-height: 210px;
+  position: relative;
+  margin: auto;
+}
 
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
 
-.mySlides {
-    display: none;
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
-.w3-left, .w3-right, .w3-badge {cursor:pointer}
-.w3-badge {height:13px;width:13px;padding:0}
-.w3-content-w3-display-container {
-    margin: auto;
-    position: relative;
-    max-width: 800px;
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
-.w3-left, .w3-right {
-    display: none;
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
-.w3-content-w3-display-container {
-    margin: auto;
-    margin: 10px;
-    position: relative;
-    
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }
-@media only screen and (min-width: 600px) {
-    .w3-content-w3-display-container {
-      margin: 0 auto !important;
-      width: 800px !important;
-      height: auto !important;
-    }
-  
-    .w3-content-w3-display-container img.mySlides {
-      width: 100% !important;
-      height: auto !important;}}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+#img2{
+    width: 374px;
+    height: 272px;
+}
+#img3{
+    width: 374px;
+    height: 272px;
+}
 </style>
 <body>
 
@@ -157,26 +211,28 @@ body{
     <div class="logo">
         <img src="logo.PNG" width="15%" height="15%">
     </div>   
-    <h1>Ana Sayfa</h1>
-    <p>https://.gencbizz.com.tr</p>
-
+    <h2>Ana Sayfa</h2>
+    <span>https://gencbizz.com.tr</span>
 </div>
-<div class="w3-content-w3-display-container" style="max-width:100%">
-    <img class="mySlides" src="https://www.beykoz.bel.tr/medya//News/beykoz_183.jpg" style="width:100%" height="300px">
-    <img class="mySlides" src="https://www.odamax.com/omag/wp-content/uploads/2023/07/istanbul-beykoz-sahili.jpg" style="width:100%" height="300px">
-    <img class="mySlides" src="https://cdn2.enuygun.com/media/lib/1200x675/uploads/image/beykoz-53356.webp" style="width:100%" height="300px">
-    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-      <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-      <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+<div class="slideshow-container">
+
+    <div class="mySlides fade" id="img1">
+      <img src="https://www.beykoz.bel.tr/medya//News/beykoz_183.jpg" style="width:100%">
     </div>
-  </div>
-
-
-
-
+    
+    <div class="mySlides fade" id="img2">
+      <img src="https://i20.haber7.net/resize/1300x788//haber/haber7/photos/2018/47/beykozda_nereler_gezilir_ne_yenir_1542698895_578.jpg" style="width:99.9%">
+    </div>
+    
+    <div class="mySlides fade" id="img3">
+      <img src="https://cdn2.enuygun.com/media/lib/1200x675/uploads/image/beykoz-53356.webp" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
 
 
 <div class="cont">
@@ -246,11 +302,11 @@ body{
 
 <footer class="footer">
     <div class="social-icons">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png" width="2%" height="2%" alt="Facebook">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png" width="1%" height="1%" alt="Facebook">
         <span>Facebook: rotabizz</span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1024px-Instagram-Icon.png" width="2%" height="2%" alt="Instagram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1024px-Instagram-Icon.png" width="1%" height="1%" alt="Instagram">
         <span>Instagram: rotabizz</span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" width="2%" height="2%" alt="Twitter">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" width="1%" height="1%" alt="Twitter">
         <span>Twitter: rotabizz</span>
     </div>
     <div class="contact-info">
@@ -262,56 +318,31 @@ body{
 
 </body>
 <script>
-    var slideIndex = 1;
-showDivs(slideIndex);
+let slideIndex = 1;
+showSlides(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-function currentDiv(n) {
-  showDivs(slideIndex = n);
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
   }
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-white", "");
+    dots[i].className = dots[i].className.replace(" active", "");
   }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
 }
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-
-setInterval(function() {
-  plusDivs(1);
-}, 3000);
 </script>
 </html>
