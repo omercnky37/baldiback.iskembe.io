@@ -1,0 +1,471 @@
+<html>
+    <head>
+<style>
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	margin: 0;
+	padding: 0;
+
+	font-family: "Martel Sans", sans-serif;
+}
+
+h1 {
+	font-size: 5.25vmin;
+	text-align: center;
+	color: white;
+}
+p {
+	font-size: max(10pt, 2.5vmin);
+	line-height: 1.4;
+	color: #0e390e;
+	margin-bottom: 1.5rem;
+}
+#card1 .overlay {
+    background: url("https://lh3.googleusercontent.com/p/AF1QipNEtGNDFw4pSdZB-ju3_gebj76Mb_y3IDw9yNmQ=s1360-w1360-h1020") no-repeat center center;
+    background-size: cover;
+}
+#card2 .overlay {
+    background: url("https://lh3.googleusercontent.com/p/AF1QipMDjk1ffwzPsmh3B-7AsMvEfsDb46cJzj6-dTJ8=s1360-w1360-h1020") no-repeat center center;
+    background-size: cover;
+}
+#card3 .overlay {
+    background: url("https://fastly.4sqi.net/img/general/600x600/71398982_8O1Ldmj3Te-xn2pNdcLKuTRDIPuA_zZyYIlShNKtaLs.jpg") no-repeat center center;
+    background-size: cover;
+}
+#card4 .overlay {
+    background: url("https://lh3.googleusercontent.com/p/AF1QipOWmEeMLay8i7eUdW8U8XcVbqkcpjLwHdO7MVjk=s1360-w1360-h1020") no-repeat center center;
+    background-size: cover;
+}
+#card5 .overlay {
+    background: url("https://lh5.googleusercontent.com/p/AF1QipNpmZyWOWsY7C2pJj4Kwt2lw1Fq0KCo4K7US63Q=h250-w334-c") no-repeat center center;
+    background-size: cover;
+}
+#card6 .overlay {
+    background: url("https://harbiyiyorum.com/wp-content/uploads/beykoz-balik-ekmek-ft.jpg")no-repeat center center;
+    background-size: cover;
+}
+#card7 .overlay {
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBiIEkH2TDj2uhqNCZozjUcfCVJCIlXRVCm94kDm-iVQ&s")no-repeat center center;
+    background-size: cover;
+}
+.wrap {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	width: 85vmin;
+	height: 60vmin;
+	margin: 2rem auto;
+	border: 5px solid;
+	border-image: linear-gradient(
+			-50deg,
+			green,
+			#00b300,
+			forestgreen,
+			green,
+			lightgreen,
+			#00e600,
+			green
+		)
+		1;
+	transition: 0.3s ease-in-out;
+	position: relative;
+	overflow: hidden;
+}
+.overlay {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: 1rem 0.75rem;
+	background: #186218;
+	transition: 0.4s ease-in-out;
+	z-index: 1;
+}
+.overlay-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 25vmin;
+	height: 100%;
+	padding: 0.5rem 0 0 0.5rem;
+	border: 3px solid;
+	border-image: linear-gradient(
+			to bottom,
+			#00ec0c 5%,
+			rgb(137, 238, 137) 35% 65%,
+			#00ec0c 95%
+		)
+		0 0 0 100%;
+	transition: 0.3s ease-in-out 0.2s;
+	z-index: 1;
+}
+.image-content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	background-size: cover;
+	transition: 0.3s ease-in-out;
+	/* border: 1px solid green; */
+}
+
+.inset {
+	max-width: 50%;
+	margin: 0.25em 1em 1em 0;
+	border-radius: 0.25em;
+	float: left;
+}
+
+.dots {
+	position: absolute;
+	bottom: 1rem;
+	right: 2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 55px;
+	height: 4vmin;
+	transition: 0.3s ease-in-out 0.3s;
+}
+.dot {
+	width: 14px;
+	height: 14px;
+	background: yellow;
+	border: 1px solid indigo;
+	border-radius: 50%;
+	transition: 0.3s ease-in-out 0.3s;
+}
+
+.text {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	padding: 3vmin 4vmin;
+	background: #ffffff;
+	box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
+	overflow-y: scroll;
+}
+
+.wrap:hover .overlay {
+	transform: translateX(-60vmin);
+}
+.wrap:hover .image-content {
+	width: 30vmin;
+}
+.wrap:hover .overlay-content {
+	border: none;
+	transition-delay: 0.2s;
+	transform: translateX(60vmin);
+}
+.wrap:hover .dots {
+	transform: translateX(1rem);
+}
+.wrap:hover .dots .dot {
+	background: white;
+}
+
+/* Animations and timing delays */
+.animate {
+	animation-duration: 0.7s;
+	animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+	animation-fill-mode: backwards;
+}
+/* Pop In */
+.pop {
+	animation-name: pop;
+}
+@keyframes pop {
+	0% {
+		opacity: 0;
+		transform: scale(0.5, 0.5);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1, 1);
+	}
+}
+
+/* Slide In */
+.slide {
+	animation-name: slide;
+}
+@keyframes slide {
+	0% {
+		opacity: 0;
+		transform: translate(4em, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+/* Slide Left */
+.slide-left {
+	animation-name: slide-left;
+}
+@keyframes slide-left {
+	0% {
+		opacity: 0;
+		transform: translate(-40px, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+.slide-up {
+	animation-name: slide-up;
+}
+@keyframes slide-up {
+	0% {
+		opacity: 0;
+		transform: translateY(3em);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.delay-1 {
+	animation-delay: 0.3s;
+}
+.delay-2 {
+	animation-delay: 0.6s;
+}
+.delay-3 {
+	animation-delay: 0.9s;
+}
+.delay-4 {
+	animation-delay: 1.2s;
+}
+.delay-5 {
+	animation-delay: 1.5s;
+}
+.delay-6 {
+	animation-delay: 1.8s;
+}
+.delay-7 {
+	animation-delay: 2.1s;
+}
+.delay-8 {
+	animation-delay: 2.4s;
+}
+header {
+        width: 100%;
+        height: 250px; /* Sabit yükseklik */
+        background: linear-gradient(135deg, #283593, #039be5, #a5e0fc);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 20px; /* Diğer içeriklerden ayrı bir boşluk bırakmak için */
+        z-index: 2; /* Cardların üzerinde olması için */
+        position: relative; /* Header'ın sabit kalması için */
+        top: 0; /* Sayfanın üstünde sabitlenmesi için */
+    }
+
+    .wrap {
+        margin-top: 20px; /* Header'ın altından başlaması için */
+    }
+
+    .card {
+        /* Card stilleri */
+        margin-bottom: 10px; /* Cardlar arası boşluk */
+        border-radius: 15px; /* Köşeleri yuvarlamak için */
+        border: 1px solid #ccc; /* Kenar çizgisi */
+        padding: 20px; /* İçerik boşluğu */
+        background-color: #f9f9f9; /* Arkaplan rengi */
+    }
+	.back{
+		height: 40%;
+		width: 15%;
+		position: absolute;
+		z-index: 3;
+		left: 9px;
+		top: 9px;
+	}
+h1{
+	position: absolute;
+	top: 15%;
+}
+
+
+
+	.footer {
+    color: #000000;
+    display: flex;
+    padding: 5px;
+	position: absolute;
+    justify-content: space-between;
+    align-items: center;
+	bottom: 0px;
+
+
+}
+@media screen and (max-width: 600px) {
+    .footer {
+        padding: 10px;
+    }
+}
+
+
+.footer .social-icons {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* İkonları sağa kaydır */
+}
+
+.footer .social-icons img {
+    width: 80px; /* İkon genişliği */
+    height: 80px;
+    margin-right: 3px; /* İkonlar arasındaki boşluk */
+}
+
+.footer .social-icons span {
+    margin-right: 5px; /* İkon ve metin arasındaki boşluk */
+  font-size: 32px;
+}
+
+.footer .contact-info {
+    font-style: italic;
+    font-size: 26px;
+    white-space: nowrap;
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        text-align: center; 
+        
+    }
+
+    .footer .social-icons {
+        margin-bottom: 10px;
+    }
+
+    .footer .social-icons img {
+    width: 20px; /* Örneğin 20px genişlikte yapabilirsiniz */
+    height: auto;
+    margin-left: 5px; /* İkonlar arasındaki boşluğu ayarlamak için */
+	font-size: 3px;
+}
+}
+</style>
+</head>
+<body>
+    <header>
+		
+   <h1>İshaklı</h1>
+  <button onclick="window.history.back()"><img src="https://techzog.com/wp-content/uploads/2016/06/back-158491_960_720.png" class="back"></button>
+   <footer class="footer">
+	<div class="social-icons">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1024px-Instagram-Icon.png" width="1%" height="1%" alt="Instagram">
+		<span>Instagram: @rotabizz.gencbizz</span>
+	</div>
+	<div class="contact-info">
+		İletişim Bilgisi: (0536 698 9708)
+	</div>
+</footer>
+    </header>
+    <div class="wrap animate pop" id="card1">
+        <div class="overlay">
+            <div class="overlay-content animate slide-left delay-2">
+                <h1 class="animate slide-left pop delay-4" id="text"></h1>
+                <p class="animate slide-left pop delay-5" style="color: rgb(255, 255, 255); margin-bottom: 2.5rem;">Rita çiftlik <em></em></p>
+            </div>
+            <div class="image-content animate slide delay-5"></div>
+            <div class="dots animate">
+                <div class="dot animate slide-up delay-6"></div>
+                <div class="dot animate slide-up delay-7"></div>
+                <div class="dot animate slide-up delay-8"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p><img class="inset" src="https://lh3.googleusercontent.com/p/AF1QipPTck8I1N6jby45PZO4m56DgTubLlY4_F4KgmwC=s1360-w1360-h1020" alt="" />İshaklı'da bulunan Rita Çiftliği, doğal güzellikleri ve huzurlu ortamıyla ziyaretçilerini büyülüyor. </p>
+            <p>Özellikle yeşillikler içinde yapılan yürüyüşler, buraya özgü bitki ve hayvan türlerini gözlemleme fırsatı sunuyor. Aynı zamanda çiftlikte organik tarım faaliyetleri de yürütülüyor, bu da doğal ürünlere erişim açısından cazip bir alternatif sunuyor.</p>
+            <p>Adres:İshaklı, Trabzon Cd. No:32, 34829 Beykoz/İstanbul</p>
+        </div>
+    </div>
+
+
+    <div class="wrap animate pop" id="card2">
+        <div class="overlay">
+            <div class="overlay-content animate slide-left delay-2">
+                <h1 class="animate slide-left pop delay-4" id="text"></h1>
+                <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Dila atlı spor kulübü<em></em></p>
+            </div>
+            <div class="image-content animate slide delay-5"></div>
+            <div class="dots animate">
+                <div class="dot animate slide-up delay-6"></div>
+                <div class="dot animate slide-up delay-7"></div>
+                <div class="dot animate slide-up delay-8"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p><img class="inset" src="https://lh3.googleusercontent.com/p/AF1QipP6NPNMRKFyMHwU2V-ZeekpbrOENFuUpG24x5oW=s1360-w1360-h1020" alt="" />Dila Atlı Spor Kulübü ise spor ve doğa tutkunları için ideal bir mekan.</p>
+            <p>At binme aktiviteleri, doğa yürüyüşleri ve eğitim programlarıyla ziyaretçilerine keyifli ve öğretici bir deneyim sunuyor. Kulübün hijyenik ve güvenli ortamı da tercih edilmesinde etkili oluyor.</p>
+            <p>Adres:Stambul, Fuzuli Cad No:9, 34829 Beykoz</p>
+        </div>
+    </div>
+
+    <div class="wrap animate pop" id="card3">
+        <div class="overlay">
+            <div class="overlay-content animate slide-left delay-2">
+                <h1 class="animate slide-left pop delay-4" id="text"></h1>
+                <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Garden consept <em></em></p>
+            </div>
+            <div class="image-content animate slide delay-5"></div>
+            <div class="dots animate">
+                <div class="dot animate slide-up delay-6"></div>
+                <div class="dot animate slide-up delay-7"></div>
+                <div class="dot animate slide-up delay-8"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p><img class="inset" src="https://fastly.4sqi.net/img/general/600x600/69626223_DcpQWOpvZhCDidV3RDgBvzPmjYI7ibYI9JnlZgeNmTk.jpg" alt="" />Garden Concept, İshaklı'da estetik ve doğal yaşamı bir araya getiren özel bir mekan.</p>
+            <p> Burada açık havada dinlenme alanları, bitki yetiştirme atölyeleri ve doğal ürünlerin satışı gibi aktiviteler bulunuyor. Ziyaretçiler, şehir yaşamının stresinden uzaklaşıp doğayla iç içe bir deneyim yaşayabiliyorlar.</p>
+            <p>Adres:İshaklı, Bayram Köprü Çk. No:1, 34829 Beykoz/İstanbul</p>
+        </div>
+    </div>
+
+
+	<div class="wrap animate pop" id="card4">
+        <div class="overlay">
+            <div class="overlay-content animate slide-left delay-2">
+                <h1 class="animate slide-left pop delay-4" id="text"></h1>
+                <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">TEB saklıköy formasyon <em></em></p>
+            </div>
+            <div class="image-content animate slide delay-5"></div>
+            <div class="dots animate">
+                <div class="dot animate slide-up delay-6"></div>
+                <div class="dot animate slide-up delay-7"></div>
+                <div class="dot animate slide-up delay-8"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p><img class="inset" src="https://lh3.googleusercontent.com/p/AF1QipPFzOgw2niVHBDxRwRY-hbSWaQeSvDvDbPB_mwK=s1360-w1360-h1020" alt="" />TEB Saklıköy Formasyon ise tarihi ve doğal güzellikleri bir arada sunan bir destinasyon. </p>
+            <p>Ziyaretçiler, burada antik kalıntıları keşfederken aynı zamanda doğanın sakinliğinin tadını çıkarabilirler. Bölgede yapılan rehberli turlar, bu zengin kültürel ve doğal mirası daha yakından tanıma fırsatı veriyor.</p>
+            <p>Adres:İshaklı, İshaklı Köyü, 34829 Beykoz</p>
+        </div>
+    </div>
+
+</body>
+</html>
